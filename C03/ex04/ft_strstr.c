@@ -1,4 +1,16 @@
-char *ft_strstr(char *str, char *to_find)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tpita-de <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/14 18:41:17 by tpita-de          #+#    #+#             */
+/*   Updated: 2019/10/14 19:00:09 by tpita-de         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char	*ft_strstr(char *str, char *to_find)
 {
 	int i;
 	int j;
@@ -6,8 +18,8 @@ char *ft_strstr(char *str, char *to_find)
 
 	k = 0;
 	i = 0;
-	if (to_find[0] == 0)
-		return ((char *)str1);
+	if (to_find[0] == '\0')
+		return (str);
 	while (str[i])
 	{
 		j = 0;
@@ -20,7 +32,7 @@ char *ft_strstr(char *str, char *to_find)
 				j++;
 			}
 			if (to_find[j] == '\0')
-				return ((char *)s1 + i);
+				return (*str[i]);
 		}
 		i++;
 	}
