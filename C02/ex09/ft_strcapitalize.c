@@ -6,14 +6,28 @@
 /*   By: tpita-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 20:15:09 by tpita-de          #+#    #+#             */
-/*   Updated: 2019/10/14 16:45:36 by tpita-de         ###   ########.fr       */
+/*   Updated: 2019/10/15 18:45:35 by tpita-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void	ft_strlowcase(char *str)
+{
+	int		i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
+		i++;
+	}
+}
+
 char	*ft_strcapitalize(char *str)
 {
-	unsigned int		i;
+	int		i;
 
+	ft_strlowcase(str);
 	i = 0;
 	if (str[i] >= 'a' && str[i] <= 'z')
 		str[i] -= 32;

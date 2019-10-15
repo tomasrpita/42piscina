@@ -6,7 +6,7 @@
 /*   By: tpita-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 13:00:07 by tpita-de          #+#    #+#             */
-/*   Updated: 2019/10/15 16:43:59 by tpita-de         ###   ########.fr       */
+/*   Updated: 2019/10/15 17:17:54 by tpita-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int		ft_atoi(char *str)
 	// int		odd;
 	// int		result;
 
-	if (!ft_numeric(str))
+	if (ft_numeric(str))
 		return (0);
 
 	count = 0;
