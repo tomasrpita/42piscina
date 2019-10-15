@@ -6,11 +6,28 @@
 /*   By: tpita-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 13:00:07 by tpita-de          #+#    #+#             */
-/*   Updated: 2019/10/15 15:24:34 by tpita-de         ###   ########.fr       */
+/*   Updated: 2019/10/15 16:43:59 by tpita-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <unistd.h>
+
+int	ft_numeric(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '\0')
+		return (0);
+	while (str[i])
+	{
+		if (str[i] >= '0' && str[i] <= '9')
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 void ft_putchar(char c)
 {
@@ -27,8 +44,11 @@ int		ft_atoi(char *str)
 	int		i;
 	int		count;
 	int		j;
-	int		odd;
-	int		result;
+	// int		odd;
+	// int		result;
+
+	if (!ft_numeric(str))
+		return (0);
 
 	count = 0;
 	while (str[count])
@@ -43,28 +63,33 @@ int		ft_atoi(char *str)
 		str[i] != '\r' && str[i] != '\t' && str[i] != '\v' &&
 		str[i] >= '0' && str[i] <= '9')
 		{	str2[j] = str[i];
-			ft_putchar(str2[j]);
 			j++;
 		}
 		str2[j] = '\0';
 		i++;	
-	}	
+	}
 	
 	i = 0;
 	count = 0;	
-	while (str2[i])
+	while (str[i])
 	{
 		if (str[i] == '-')
 			count++;
 		i++;
 	}
-	odd = count % 2;
-	result = *str;
-	return (result);	
+		
+
+	return (count);	
 }
 
 int main()
 {
-	ft_atoi(" ---+--+1234ab567");
+	int x;
+
+	// x = ft_atoi(" ---+--+1234ab567");
+	x = ft_atoi("567");
+		
+	//x = ft_atoi(" ---+--+");
+	printf("%d", x);
 	return (1);
 }
