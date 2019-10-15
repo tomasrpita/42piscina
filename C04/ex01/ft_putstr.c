@@ -19,9 +19,12 @@ void	ft_putchar(char c)
 
 void	ft_putstr(char *str)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
 	while (str[i])
-		ft_putchar('0' + str[i]);
+	{	
+		ft_putchar(str[i]);
+		i++;
+	}
 }
