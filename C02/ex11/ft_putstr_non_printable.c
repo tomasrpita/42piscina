@@ -19,18 +19,17 @@ void	ft_putchar(char c)
 
 void	ft_print_hex(char c)
 {
-	char				*hex;
+	char			*hex;
 	unsigned int		i;
 
 	i = c;
 	hex = "0123456789abcdef";
 	if (i > 16)
 	{
-		ft_print_hex(i / 10);
-		ft_print_hex(i % 10);
+		ft_putchar(hex[i / 16]);
 	}
-	else
-		ft_putchar(hex[i]);
+	
+	ft_putchar(hex[i % 16]);
 }
 
 void	ft_putstr_non_printable(char *str)
@@ -38,9 +37,9 @@ void	ft_putstr_non_printable(char *str)
 	int		i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		if ((str[i] >= 0 && str[i] < 31) || str[i] == 127)
+		if ((str[i] >= 0 && str[i] < 32) || str[i] == 127)
 		{
 			ft_putchar('\\');
 			if (str[i] < 16)
