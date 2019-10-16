@@ -6,7 +6,7 @@
 /*   By: tpita-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 18:41:17 by tpita-de          #+#    #+#             */
-/*   Updated: 2019/10/14 19:00:09 by tpita-de         ###   ########.fr       */
+/*   Updated: 2019/10/16 17:39:06 by tpita-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ char	*ft_strstr(char *str, char *to_find)
 
 	if (to_find[0] == '\0')
 		return (str);
-	
 	k = 0;
 	i = 0;
 	while (str[i])

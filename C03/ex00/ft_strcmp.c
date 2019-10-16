@@ -6,13 +6,13 @@
 /*   By: tpita-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 14:29:50 by tpita-de          #+#    #+#             */
-/*   Updated: 2019/10/14 17:19:32 by tpita-de         ###   ########.fr       */
+/*   Updated: 2019/10/16 17:22:56 by tpita-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int		i;
+	int				i;
 	unsigned int	result;
 
 	i = 0;
