@@ -17,7 +17,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 
 	conteo = 0;
 	while (src[conteo] != '\0')
-		conteo++;
+		++conteo;
 	i = 0;
 	while (src[i] != '\0' && i < (size - 1))
 	{
