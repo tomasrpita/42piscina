@@ -30,6 +30,7 @@ int        ft_atoi(char *str)
     char     str2[50];
     int       result;
     
+    
     result = 0;
     nc = 0;
     if (!ft_numeric(str))
@@ -48,29 +49,24 @@ int        ft_atoi(char *str)
         nc = nc % 2 ? -1 : 1;
         while (str[i] >= '0' && str[i] <= '9')
         {
-            str2[j] = str[i];
+            
+            result = result * 10 + (str[i] - '0');
             i++;
-            j++;
+            
         }
-        if (j != 0)
-            while (j > 0)
-            {
-                
-                return ((int)&str2 * nc);
-                
-            j:write++;
-            }
-        return (0);
+        return (result * nc);
     }
+    return (0);
+}
+
+int main()
+{
+    int x;
     
-    int main()
-    {
-        int x;
-        
-        // x = ft_atoi(" ---+--+1234ab567");
-        x = ft_atoi("567");
-        
-        //x = ft_atoi(" ---+--+");
-        printf("%d", x);
-        return (1);
+    // x = ft_atoi(" ---+--+1234ab567");
+    x = ft_atoi("567");
+    
+    //x = ft_atoi(" ---+--+");
+    printf("%d", x);
+    return (1);
     }
