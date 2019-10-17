@@ -12,18 +12,22 @@
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	unsigned int	i;
-	unsigned int	conteo;
+  unsigned	int i;
+  unsigned	int j;
+  unsigned  int k;
 
-	conteo = 0;
-	while (src[conteo] != '\0')
-		++conteo;
+  k = 0;
 	i = 0;
-	while (src[i] != '\0' && i < (size - 1))
+	while (dest[i] != '\0')
+		i++;
+	j = 0;
+	while (src[j] != '\0' && j < size)
 	{
-		dest[i] = src[i];
-		++i;
+		dest[i + j] = src[j];
+		j++;
 	}
-	dest[i] = '\0';
-	return (conteo);
+	dest[i + j] = '\0';
+	while (src[k] != '\0')
+		k++;
+	return (k);
 }
