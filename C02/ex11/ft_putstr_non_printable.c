@@ -17,36 +17,41 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_print_hex(char c)
-{
-	char			*hex;
-	unsigned int	i;
+void	ft_putchar(char c);
 
-	i = c;
-	hex = "0123456789abcdef";
-	if (i > 16)
-	{
-		ft_putchar(hex[i / 16]);
-	}
-	ft_putchar(hex[i % 16]);
+int		pr(char c)
+{
+	return (c >= ' ' && c <= '~');
+}
+
+char	hex(unsigned char u)
+{
+	if (u < 10)
+		return ('0' + u);
+	return ('a' + (u - 10));
+}
+
+void	print_hex(char c)
+{
+	unsigned char x;
+
+	x = (unsigned)c;
+	ft_putchar('\\');
+	ft_putchar(hex(x / 16));
+	ft_putchar(hex(x % 16));
 }
 
 void	ft_putstr_non_printable(char *str)
 {
-	int		i;
+	int i;
 
 	i = 0;
 	while (str[i])
 	{
-		if ((str[i] >= 0 && str[i] < 32) || str[i] == 127)
-		{
-			ft_putchar('\\');
-			if (str[i] < 16)
-				ft_putchar('0');
-			ft_print_hex(str[i]);
-		}
-		else
+		if (pr(str[i]))
 			ft_putchar(str[i]);
+		else
+			print_hex(str[i]);
 		i++;
 	}
 }
