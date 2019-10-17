@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpita-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/14 14:29:47 by tpita-de          #+#    #+#             */
-/*   Updated: 2019/10/17 11:36:26 by tpita-de         ###   ########.fr       */
+/*   Created: 2019/10/17 14:59:31 by tpita-de          #+#    #+#             */
+/*   Updated: 2019/10/17 15:22:37 by tpita-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	unsigned int	i;
+#include <unistd.h>
 
-	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
-	}
-	return (0);
+void ft_putchar(char c)
+{
+	write(1, &c, 1);
+}	
+
+void ft_putnbr_base(int nbr, char *base)
+{
+
 }
